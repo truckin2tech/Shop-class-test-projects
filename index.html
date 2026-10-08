@@ -3,59 +3,51 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Keep the Shop Open</title>
 <meta name="description" content="Help keep the school shop class open for the next generation of builders.">
+<title>Keep the Shop Open</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Work+Sans:wght@400;500;700&display=swap">
 <style>
+  /* Layout: full-width dark hero band with oversized cause title, then light sections stacked in one column */
   :root {
-    --bg: #fbf7f0;
-    --ink: #1a1a1a;
-    --muted: #5a554c;
-    --accent: #d9480f;
-    --accent-ink: #ffffff;
-    --card: #ffffff;
-    --line: #e4dccd;
-    --hero-bg: #1a1a1a;
-    --hero-ink: #fbf7f0;
+    --bg: #fbf7f0; --ink: #1a1a1a; --muted: #5a554c; --accent: #d9480f; --accent-ink: #ffffff;
+    --card: #ffffff; --line: #e4dccd; --hero-bg: #1a1a1a; --hero-ink: #fbf7f0; --demo-bg: #fff3bf; --demo-ink: #5c4a00;
+    --font-display: "Archivo", "Arial Black", system-ui, sans-serif;
+    --font-body: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #141414;
-      --ink: #f3ede2;
-      --muted: #b4ac9d;
-      --accent: #ff7a3d;
-      --accent-ink: #141414;
-      --card: #1f1f1f;
-      --line: #333;
-      --hero-bg: #000;
-      --hero-ink: #f3ede2;
-    }
-  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #141414; --ink: #f3ede2; --muted: #b4ac9d; --accent: #ff7a3d; --accent-ink: #141414;
+    --card: #1f1f1f; --line: #333; --hero-bg: #000; --hero-ink: #f3ede2; --demo-bg: #3a3000; --demo-ink: #ffe680; color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #141414; --ink: #f3ede2; --muted: #b4ac9d; --accent: #ff7a3d; --accent-ink: #141414;
+    --card: #1f1f1f; --line: #333; --hero-bg: #000; --hero-ink: #f3ede2; --demo-bg: #3a3000; --demo-ink: #ffe680; color-scheme: dark; }
+
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.55;
   }
   .demo {
-    background: #fff3bf;
-    color: #5c4a00;
+    background: var(--demo-bg);
+    color: var(--demo-ink);
     text-align: center;
     font-size: .85rem;
     padding: .5rem 1rem;
   }
-  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1rem; }
+  .wrap { max-width: 64rem; margin: 0 auto; padding-inline: 1rem; }
 
   /* Hero */
   .hero {
     background: var(--hero-bg);
     color: var(--hero-ink);
-    min-height: 88vh;
     display: flex;
     align-items: center;
-    padding: 4rem 0;
+    padding-block: 4rem 5rem;
   }
   .eyebrow {
     text-transform: uppercase;
@@ -66,10 +58,11 @@
     margin: 0 0 1rem;
   }
   h1 {
-    font-size: clamp(3.5rem, 15vw, 11rem);
+    font-size: clamp(3.2rem, 13vw, 9rem);
     line-height: .92;
     letter-spacing: -.04em;
     margin: 0 0 1.5rem;
+    font-family: var(--font-display);
     font-weight: 900;
     text-transform: uppercase;
   }
@@ -145,9 +138,12 @@
   .note { color: var(--muted); font-size: .9rem; margin-top: 1rem; }
   footer { padding: 2.5rem 0; color: var(--muted); font-size: .9rem; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body { background: var(--bg); color: var(--ink); }
 </style>
 </head>
 <body>
+
 
 <div class="demo" role="note">Demo page: the cause, wording and donation link are placeholders for a test.</div>
 
