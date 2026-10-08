@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keep the Shop Open</title>
+<meta name="description" content="Help keep the school shop class open for the next generation of builders.">
+<style>
+  :root {
+    --bg: #fbf7f0;
+    --ink: #1a1a1a;
+    --muted: #5a554c;
+    --accent: #d9480f;
+    --accent-ink: #ffffff;
+    --card: #ffffff;
+    --line: #e4dccd;
+    --hero-bg: #1a1a1a;
+    --hero-ink: #fbf7f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141414;
+      --ink: #f3ede2;
+      --muted: #b4ac9d;
+      --accent: #ff7a3d;
+      --accent-ink: #141414;
+      --card: #1f1f1f;
+      --line: #333;
+      --hero-bg: #000;
+      --hero-ink: #f3ede2;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+  }
+  .demo {
+    background: #fff3bf;
+    color: #5c4a00;
+    text-align: center;
+    font-size: .85rem;
+    padding: .5rem 1rem;
+  }
+  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1rem; }
+
+  /* Hero */
+  .hero {
+    background: var(--hero-bg);
+    color: var(--hero-ink);
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-weight: 700;
+    font-size: .9rem;
+    color: var(--accent);
+    margin: 0 0 1rem;
+  }
+  h1 {
+    font-size: clamp(3.5rem, 15vw, 11rem);
+    line-height: .92;
+    letter-spacing: -.04em;
+    margin: 0 0 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  h1 span { color: var(--accent); }
+  .statement {
+    font-size: clamp(1.4rem, 3.6vw, 2.4rem);
+    line-height: 1.25;
+    max-width: 30ch;
+    margin: 0 0 2.5rem;
+    font-weight: 500;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font: inherit;
+    font-weight: 800;
+    font-size: 1.15rem;
+    padding: 1rem 2.2rem;
+    border: 0;
+    border-radius: .5rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+  /* Sections */
+  section { padding: 4.5rem 0; }
+  h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    margin: 0 0 2rem;
+  }
+  .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: .75rem;
+    padding: 1.5rem;
+  }
+  .card .amt { font-size: 2.2rem; font-weight: 900; color: var(--accent); margin: 0; }
+  .card p { margin: .4rem 0 0; color: var(--muted); }
+
+  /* Donate */
+  #donate { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .amounts { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1rem; }
+  .amounts button {
+    font: inherit;
+    font-weight: 700;
+    font-size: 1.1rem;
+    min-width: 5.5rem;
+    padding: .8rem 1.2rem;
+    border: 2px solid var(--line);
+    border-radius: .5rem;
+    background: var(--bg);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .amounts button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+  .custom { display: flex; align-items: center; gap: .5rem; margin-bottom: 1.5rem; }
+  .custom input {
+    font: inherit;
+    font-size: 1.1rem;
+    width: 9rem;
+    padding: .7rem;
+    border: 2px solid var(--line);
+    border-radius: .5rem;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  .note { color: var(--muted); font-size: .9rem; margin-top: 1rem; }
+  footer { padding: 2.5rem 0; color: var(--muted); font-size: .9rem; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<div class="demo" role="note">Demo page: the cause, wording and donation link are placeholders for a test.</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Fundraiser</p>
+    <h1>Keep the <span>Shop</span> Open</h1>
+    <p class="statement">Every kid deserves the chance to build something with their own hands.</p>
+    <a class="btn" href="#donate">Donate now</a>
+  </div>
+</header>
+
+<main>
+  <section aria-labelledby="why">
+    <div class="wrap">
+      <h2 id="why">Why it matters</h2>
+      <p style="max-width:42rem;font-size:1.2rem;">
+        Shop class teaches students to measure twice, fix what breaks, and finish what they start.
+        Tools wear out and materials cost money. Your gift keeps the doors open and the saws running.
+      </p>
+    </div>
+  </section>
+
+  <section aria-labelledby="impact" style="padding-top:0">
+    <div class="wrap">
+      <h2 id="impact">What your gift does</h2>
+      <div class="grid">
+        <div class="card"><p class="amt">$25</p><p>Safety gear and supplies for a student.</p></div>
+        <div class="card"><p class="amt">$100</p><p>Materials for a class project.</p></div>
+        <div class="card"><p class="amt">$500</p><p>Replace or repair a core shop tool.</p></div>
+      </div>
+      <p class="note">Example tiers only. Real costs would replace these.</p>
+    </div>
+  </section>
+
+  <section id="donate" aria-labelledby="give">
+    <div class="wrap">
+      <h2 id="give">Give today</h2>
+      <div class="amounts" role="group" aria-label="Donation amount">
+        <button type="button" data-amt="25">$25</button>
+        <button type="button" data-amt="50">$50</button>
+        <button type="button" data-amt="100" aria-pressed="true">$100</button>
+        <button type="button" data-amt="250">$250</button>
+        <button type="button" data-amt="500">$500</button>
+      </div>
+      <label class="custom">
+        <span>Other amount: $</span>
+        <input id="custom" type="number" min="1" step="1" inputmode="numeric" placeholder="Amount">
+      </label>
+      <!-- Replace href with your payment link (Stripe, PayPal, Givebutter, etc.) -->
+      <a class="btn" id="give-btn" href="#donate">Donate $100</a>
+      <p class="note">Placeholder link: no payment is processed on this page.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Questions? Contact: your-email@example.org</div>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.amounts button');
+  const custom = document.getElementById('custom');
+  const give = document.getElementById('give-btn');
+  const setAmount = n => { give.textContent = n ? 'Donate $' + n : 'Donate'; };
+
+  buttons.forEach(b => b.addEventListener('click', () => {
+    buttons.forEach(x => x.setAttribute('aria-pressed', x === b));
+    custom.value = '';
+    setAmount(b.dataset.amt);
+  }));
+  custom.addEventListener('input', () => {
+    buttons.forEach(x => x.setAttribute('aria-pressed', 'false'));
+    const n = parseInt(custom.value, 10);
+    setAmount(n > 0 ? n : null);
+  });
+</script>
+</body>
+</html>
